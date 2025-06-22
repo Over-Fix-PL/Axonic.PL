@@ -43,15 +43,21 @@
       <span class="axonic-gradient">AXONIC.PL</span>
       <span class="subtitle">Galaxy Game Finder</span>
     </div>
-    <div class="search-section anim-fadein-up">
+    <div class="tabs anim-fadein-up">
+      <button id="tab-search" class="tab-btn active">Szukaj</button>
+      <button id="tab-list" class="tab-btn">Gry</button>
+    </div>
+    <div id="search-section" class="tab-content">
       <div class="search-label">Wpisz <b>ID gry</b>, aby wyszukać</div>
       <div class="search-bar glass anim-pulse">
         <input type="text" id="game-search" placeholder="ID gry" autocomplete="off">
         <button id="find-btn" class="glow-btn">SZUKAJ</button>
       </div>
+      <div id="game-details" class="anim-fadein-up"></div>
     </div>
-    <div id="game-details" class="anim-fadein-up"></div>
-    <div id="game-list" class="anim-fadein-up"></div>
+    <div id="list-section" class="tab-content" style="display:none;">
+      <div id="game-list" class="anim-fadein-up"></div>
+    </div>
   </div>
   <div class="discord-section">
     <a class="discord-link anim-fadein-up" href="https://discord.gg/vkFaXxKHJB" target="_blank" id="discord-fab">
