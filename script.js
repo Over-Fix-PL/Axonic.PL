@@ -1,5 +1,3 @@
-// Loader/animacja można dodać według uznania
-
 // PANEL MODERATORA
 const panelToggle = document.getElementById('panel-toggle');
 const adminPanel = document.getElementById('admin-panel');
