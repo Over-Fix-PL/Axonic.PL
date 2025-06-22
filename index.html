@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>AXONIC.PL - Game Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Panel moderacji (ukryty domyślnie) -->
+    <div id="admin-panel" class="panel-hidden">
+        <div id="admin-login" class="panel-section">
+            <h3>Panel Moderacji</h3>
+            <input type="text" id="admin-username" placeholder="Login">
+            <input type="password" id="admin-password" placeholder="Hasło">
+            <button id="admin-login-btn">Zaloguj</button>
+            <div id="admin-login-error"></div>
+        </div>
+        <div id="admin-dashboard" class="panel-section panel-hidden">
+            <h4>Dodaj nową grę</h4>
+            <input type="text" id="game-id" placeholder="ID Gry">
+            <input type="text" id="game-title" placeholder="Tytuł Gry">
+            <textarea id="game-desc" placeholder="Opis gry"></textarea>
+            <input type="file" id="game-image">
+            <input type="text" id="game-link" placeholder="Link do pobrania">
+            <button id="add-game-btn">Dodaj grę</button>
+            <div id="add-game-status"></div>
+            <button id="logout-btn">Wyloguj</button>
+        </div>
+    </div>
+
+    <!-- Panel w lewym górnym rogu do otwierania panelu moderacji -->
+    <div id="panel-toggle" title="Otwórz panel moderacji"></div>
+
+    <div class="container">
+        <div class="title">AXONIC.PL</div>
+        <div class="search-section">
+            <div class="search-label">WPISZ ID GRY ZEBY<br>ZNALEZĆ</div>
+            <div class="search-bar">
+                <input type="text" id="game-search" placeholder="ID gry">
+                <button id="find-btn">DOWNLOAD</button>
+            </div>
+        </div>
+        <div id="game-details"></div>
+    </div>
+    <div class="discord-link">
+        DISCORD
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
