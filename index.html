@@ -8,16 +8,6 @@
   <link rel="icon" href="logo.png" type="image/png">
 </head>
 <body>
-  <div id="loader">
-    <div class="loader-bg"></div>
-    <div class="loader-inner">
-      <img src="logo.png" alt="Logo projektu" class="loader-logo">
-      <div class="loader-spin"></div>
-      <div class="loader-text">Ładowanie...</div>
-    </div>
-  </div>
-
-  <div class="bg-steam"></div>
   <header>
     <img src="logo.png" alt="Logo" class="main-logo">
     <div class="main-title">IDASJ Game Finder</div>
@@ -27,36 +17,23 @@
   <nav class="tabs">
     <button id="tab-search" class="tab-btn active">Szukaj</button>
     <button id="tab-list" class="tab-btn">Gry</button>
-    <button id="tab-admin" class="tab-btn">Panel moderatora</button>
   </nav>
 
   <main>
     <section id="search-section" class="tab-content">
       <div class="search-label">Wpisz <b>ID gry</b>, aby wyszukać</div>
-      <div class="search-bar glass anim-pulse">
+      <div class="search-bar">
         <input type="text" id="game-search" placeholder="ID gry" autocomplete="off">
         <button id="find-btn" class="glow-btn">SZUKAJ</button>
       </div>
-      <div id="game-details" class="anim-fadein-up"></div>
+      <div id="game-details"></div>
     </section>
     <section id="list-section" class="tab-content" style="display:none;">
-      <div id="game-list" class="anim-fadein-up"></div>
-    </section>
-    <section id="admin-section" class="tab-content" style="display:none;">
-      <div class="admin-card">
-        <h2>Panel moderatora</h2>
-        <input type="text" id="game-id" placeholder="ID gry">
-        <input type="text" id="game-title" placeholder="Tytuł gry">
-        <textarea id="game-desc" placeholder="Opis gry"></textarea>
-        <input type="text" id="game-link" placeholder="Link do pobrania">
-        <input type="file" id="game-image">
-        <button id="add-game-btn">Dodaj grę</button>
-        <div id="add-game-status"></div>
-      </div>
+      <div id="game-list"></div>
     </section>
   </main>
   <footer>
-    <span>© 2025 IDASJ &bull; <a href="https://github.com/Over-Fix-PL/Axonic.PL" target="_blank">Repozytorium GitHub</a></span>
+    <span>© 2025 IDASJ • <a href="https://github.com/Over-Fix-PL/Axonic.PL" target="_blank">Repozytorium GitHub</a></span>
   </footer>
   <script src="script.js"></script>
 </body>
