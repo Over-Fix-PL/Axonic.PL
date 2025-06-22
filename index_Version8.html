@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>AXONIC.PL — Galaxy Game Finder</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="galaxy-bg">
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div>
+  </div>
+  <div id="panel-toggle" title="Panel Moderacji">
+    <svg width="30" height="30" fill="none"><rect x="6" y="8" width="18" height="3" rx="1.5" fill="#00ffe7"/><rect x="6" y="14" width="18" height="3" rx="1.5" fill="#00ffe7"/><rect x="6" y="20" width="18" height="3" rx="1.5" fill="#00ffe7"/></svg>
+  </div>
+  <div id="admin-panel" class="panel-hidden">
+    <div class="admin-card">
+      <div id="admin-login" class="panel-section">
+        <h2>Panel Moderacji</h2>
+        <input type="text" id="admin-username" placeholder="Login">
+        <input type="password" id="admin-password" placeholder="Hasło">
+        <button id="admin-login-btn">Zaloguj</button>
+        <div id="admin-login-error"></div>
+      </div>
+      <div id="admin-dashboard" class="panel-section panel-hidden">
+        <h3>Dodaj nową grę</h3>
+        <input type="text" id="game-id" placeholder="ID gry">
+        <input type="text" id="game-title" placeholder="Tytuł gry">
+        <textarea id="game-desc" placeholder="Opis gry"></textarea>
+        <input type="text" id="game-link" placeholder="Link do pobrania">
+        <input type="file" id="game-image">
+        <button id="add-game-btn">Generuj plik gry</button>
+        <div id="add-game-status"></div>
+        <button id="logout-btn" class="logout-btn">Wyloguj</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="title anim-fadein-down">
+      <span class="axonic-gradient">AXONIC.PL</span>
+      <span class="subtitle">Galaxy Game Finder</span>
+    </div>
+    <div class="search-section anim-fadein-up">
+      <div class="search-label">Wpisz <b>ID gry</b>, aby wyszukać</div>
+      <div class="search-bar glass anim-pulse">
+        <input type="text" id="game-search" placeholder="ID gry" autocomplete="off">
+        <button id="find-btn" class="glow-btn">SZUKAJ</button>
+      </div>
+    </div>
+    <div id="game-details" class="anim-fadein-up"></div>
+    <div id="game-list" class="anim-fadein-up"></div>
+  </div>
+  <div class="discord-section">
+    <a class="discord-link anim-fadein-up" href="https://discord.gg/vkFaXxKHJB" target="_blank" id="discord-fab">
+      <span class="fab-icon"></span>
+      DISCORD
+    </a>
+  </div>
+  <footer>
+    <span>© 2025 Axonic.PL &bull; <a href="https://github.com/Over-Fix-PL/Axonic.PL" target="_blank">Repozytorium GitHub</a></span>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
