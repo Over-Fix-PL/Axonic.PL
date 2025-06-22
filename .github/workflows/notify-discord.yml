@@ -1,0 +1,30 @@
+name: Notify Discord on new game
+
+on:
+  push:
+    paths:
+      - 'games/*.json'
+      - 'games/index.json'
+
+jobs:
+  discord-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Notify Discord if new game added
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          NEW_FILES=$(git diff --name-status ${{ github.event.before }} ${{ github.sha }} | grep "^A" | awk '{print $2}')
+          for file in $NEW_FILES; do
+            if [[ $file == games/*.json && $file != games/index.json ]]; then
+              GAME_ID=$(basename $file .json)
+              GAME_JSON=$(cat $file)
+              TITLE=$(echo $GAME_JSON | jq -r .title)
+              DESC=$(echo $GAME_JSON | jq -r .desc)
+              LINK=$(echo $GAME_JSON | jq -r .link)
+              curl -H "Content-Type: application/json" -X POST \
+                -d "{\"embeds\":[{\"title\":\"🆕 Nowa gra na stronie Axonic.PL!\",\"description\":\"**$TITLE**\n$DESC\",\"color\":65511,\"fields\":[{\"name\":\"Pobierz grę\",\"value\":\"[Kliknij tutaj, by odwiedzić stronę i pobrać grę]($LINK)\",\"inline\":false}],\"timestamp\":\"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\"}]}" \
+                $DISCORD_WEBHOOK
+            fi
+          done
