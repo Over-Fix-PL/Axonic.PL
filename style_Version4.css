@@ -1,0 +1,9 @@
+/* Użyj stylów z poprzednich wiadomości, możesz je rozbudować wg uznania (galaxy, glass, neon, itp.) */
+body {
+    background: linear-gradient(135deg, #191970 0%, #6d28d9 40%, #4834d4 80%, #1e2d70 100%);
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    color: #fff;
+}
+/* ... cała reszta stylów galaxy, glass, gwiazdy, przyciski ... */

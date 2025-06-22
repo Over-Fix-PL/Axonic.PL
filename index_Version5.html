@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>AXONIC.PL - Galaxy Game Finder</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="galaxy-bg">
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div>
+    </div>
+    <div class="container">
+        <div class="title anim-fadein-down">AXONIC.PL</div>
+        <div class="search-section anim-fadein-up">
+            <div class="search-label">WPISZ ID GRY, ŻEBY ZNALEŹĆ</div>
+            <div class="search-bar glass anim-pulse">
+                <input type="text" id="game-search" placeholder="ID gry" autocomplete="off">
+                <button id="find-btn" class="glow-btn">SZUKAJ</button>
+            </div>
+        </div>
+        <div id="game-details" class="anim-fadein-up"></div>
+        <div id="game-list" class="anim-fadein-up"></div>
+    </div>
+    <div class="discord-section">
+        <a class="discord-link anim-fadein-up" href="https://discord.gg/vkFaXxKHJB" target="_blank" id="discord-fab">
+            <span class="fab-icon"></span>
+            DISCORD
+        </a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
